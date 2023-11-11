@@ -44,6 +44,11 @@ section h2 {
     font-size: 2.5rem;
 }
 
+
+/*****************
+New styles begin here and continue to the end of the page 
+****************/
+
 section ul {
     list-style-type: none;
     padding: 0;
@@ -135,7 +140,6 @@ figcaption a {
     color: var(--color8);
 }
 
-
 /* mission styles */
 
 #mission {
@@ -148,7 +152,6 @@ figcaption a {
 }
 
 .missionimg {
-    max-height: 100px;
     display: block;
 }
 
@@ -156,24 +159,22 @@ figcaption a {
 /* turn on flexbox here - prior to this, elements stacked individually as blocks */
 
 @media (min-width: 550px) {
-    section ul {
+    #collections ul {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
     }
-    section li {
+    #collections li {
         flex-basis: 49.5%;
     }
     /* turn off object position, inherit object-fit: cover */
-    figure img {
+    #collections figure img {
         object-position: 0;
     }
-    /* display: flow-root clears the float!!!! max-width keeps the text line length shorter */
     .missiontext {
         display: flow-root;
         max-width: 900px;
     }
-    /* working with an image with a wide width so we have flexibility to set the shape-outside polygon points where we want. The edges of the image limit their placement. In Firefox, you can draw with shape-outside in browser tools */
     .missionimg {
         float: left;
         shape-outside: polygon(35.84% 94.87%, 34.64% 87.05%, 51.64% 4.06%, 55.1% 2.38%);
@@ -185,7 +186,16 @@ figcaption a {
     section h2 {
         margin-left: 100px;
     }
-    section li {
+    #collections li {
+        flex-basis: 32.5%;
+    }
+    .missiontext {
+        justify-content: space-between;
+    }
+    #mission .missiontext {
+        flex-basis: 64.5%;
+    }
+    #mission img {
         flex-basis: 32.5%;
     }
 }
